@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "destination": "hello",
+    "activity": "here",
+    "partySize": "2",
+    "date": "12/8/20"
+  },
+  {
+    "id": 2,
+    "destination": "nyc",
+    "activity": "tourist",
+    "partySize": "4",
+    "date": "12/9/20"
+  }
+]

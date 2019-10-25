@@ -2,19 +2,23 @@ const express = require("express")
 const router = express.Router()
 
 router.get('/past', (req, res)=>{
-  res.send('hello past trips')
+  const viewData = {}
+  res.render('./trips/trips', viewData)
 })
 
 router.get('/past/:id', (req, res)=>{
-  res.send('hello this trip ' + req.params.id)
+  const viewData = {}
+  res.render('./trips/past_trip', viewData)
 })
 
 router.get('/future', (req, res)=>{
-  res.send('hello future trips')
+  const viewData = {}
+  res.render('./trips/trips', viewData)
 })
 
 router.get('/future/:id', (req, res)=>{
-  res.send('hello this future trip ' + req.params.id)
+  const viewData = {}
+  res.render('./trips/future_trip', viewData)
 })
 
 module.exports = router
