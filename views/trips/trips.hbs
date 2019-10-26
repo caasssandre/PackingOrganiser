@@ -1,1 +1,8 @@
-<p>hello all trips</p>
+<div>
+  <h2>Your upcoming trips</h2>
+  <ul id = "tripsList">
+    {{#each this}}
+      <li><a href ='/trips/future/{{id}}'>{{destination}}</a></li>
+    {{/each}}
+  </ul>
+</div>
