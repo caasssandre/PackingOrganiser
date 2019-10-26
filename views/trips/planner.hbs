@@ -5,11 +5,22 @@
       <div>
         <label for="destination">
           Destination :
-          <input class="input" type="text" name="destination">
+          <input class="input" type="text" name="destination" placeholder="Where are you going?">
         </label>
       </div>
       <div>
-        <div id = "dropdown">
+        <label for="partySize">
+          Party size :
+          <input class="input" type="text" name="partySize" placeholder="How many people are coming?">
+        </label>
+      </div>
+      <div>
+        <label for="date">
+          Date :
+          <input class="input" type="text" name="date" placeholder="When will you go?">
+        </label>
+      </div>
+      <div>
           <label for="activity">
             Activity :
             <select name="activity">
@@ -19,19 +30,6 @@
               {{/each}}
             </select>
           </label>
-        </div>
-      </div>
-      <div>
-        <label for="partySize">
-          Party size :
-          <input class="input" type="text" name="partySize">
-        </label>
-      </div>
-      <div>
-        <label for="date">
-          Date :
-          <input class="input" type="text" name="date">
-        </label>
       </div>
       <div>
         <button class="button">Create</button>
