@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const data = require('./data.json')
+const functions = require('./functions')
 
 router.get('/past', (req, res)=>{
   const viewData = {}
@@ -18,12 +19,10 @@ router.get('/future', (req, res)=>{
 })
 
 router.get('/future/:id', (req, res)=>{
-  const viewData = findTrip(data, req.params.id)
+  const viewData = functions.findTrip(data, req.params.id)
   res.render('./trips/future_trip', viewData)
 })
 
-function findTrip(data, id){
-    return data.find(trip => trip.id == id)
-}
+
 
 module.exports = router

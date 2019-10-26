@@ -9,6 +9,11 @@ function addTrip(id, request, data){
   })
 }
 
+function findTrip(data, id){
+  return data.find(trip => trip.id == id)
+}
+
 module.exports = {
-  addTrip :addTrip
+  addTrip :addTrip,
+  findTrip : findTrip
 }
