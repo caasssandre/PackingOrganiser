@@ -14,7 +14,6 @@ router.get('/past/:id', (req, res)=>{
 
 router.get('/future', (req, res)=>{
   const viewData = data
-  console.log(data)
   res.render('./trips/trips', viewData)
 })
 

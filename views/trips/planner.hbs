@@ -1,9 +1,5 @@
-{{#if id}}
-<button>plan a new trip</button>
-{{else}}
-<a class="button" href="#firstTrip">Plan your first trip</a>
-{{/if}}
-<div id="firstTrip" class="overlay">
+<a class="button" href="#newTrip">Plan a new trip</a>
+<div id="newTrip" class="overlay">
   <div class="popup">
     <h2>My pack</h2>
     <a class="close" href="#">&times;</a>
@@ -19,10 +15,9 @@
           <label for="activity">
             Activity
             <select id = "myList" name = "activity">
-               <option value = "hiking">hiking</option>
-               <option value = "camping">camping</option>
-               <option value = "skiing">skiing</option>
-               <option value = "climbing">climbing</option>
+              {{#each this}}
+                <option value = "{{title}}">{{title}}</option>
+              {{/each}}
              </select>
           </label>
         </div>
