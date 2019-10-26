@@ -1,42 +1,41 @@
-<a class="button" href="#newTrip">Plan a new trip</a>
-<div id="newTrip" class="overlay">
-  <div class="popup">
-    <h2>My pack</h2>
-    <a class="close" href="#">&times;</a>
-    <div>
-      <form action='/planner' method='post'>
-        <div>
-          <label for="destination">
-            Destination
-            <input type="text" name="destination" id="">
-          </label>
-        </div>
-        <div>
+<div id="newTrip">
+  <h2>My pack</h2>
+  <div>
+    <form action='/planner' method='post'>
+      <div>
+        <label for="destination">
+          Destination :
+          <input class="input" type="text" name="destination">
+        </label>
+      </div>
+      <div>
+        <div id = "dropdown">
           <label for="activity">
-            Activity
-            <select id = "myList" name = "activity">
+            Activity :
+            <select name="activity">
+              <option value=0>Select activity</option>
               {{#each this}}
-                <option value = "{{title}}">{{title}}</option>
+              <option value="{{title}}">{{title}}</option>
               {{/each}}
-             </select>
+            </select>
           </label>
         </div>
-        <div>
-          <label for="psrtySize">
-            Party size
-            <input type="text" name="partySize" id="">
-          </label>
-        </div>
-        <div>
-          <label for="date">
-            Date
-            <input type="text" name="date" id="">
-          </label>
-        </div>
-        <div>
-          <button class="button">Create</button>
-        </div>
-      </form>
-    </div>
+      </div>
+      <div>
+        <label for="partySize">
+          Party size :
+          <input class="input" type="text" name="partySize">
+        </label>
+      </div>
+      <div>
+        <label for="date">
+          Date :
+          <input class="input" type="text" name="date">
+        </label>
+      </div>
+      <div>
+        <button class="button">Create</button>
+      </div>
+    </form>
   </div>
 </div>

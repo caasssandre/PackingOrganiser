@@ -41,80 +41,30 @@ input{
 .button {
   font-size: 22.5px;
   padding: 10px;
-  color: white;
-  background-color:#3AC376; 
-  border: 2px solid #2A797D;
+  background-color:rgba(255,255,255,0.2); 
+  border: 2px solid rgba(69, 159, 233, 0.5);
   border-radius: 20px/50px;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease-out;
   display: block;
-  width: 80%;
-  margin: auto;
+  float: right;
   margin-top: 10px;
   font-family: 'Roboto Mono', monospace;
   text-align: center;
 }
 
 .button:hover {
-  background: #2A797D;
-  color: black;
-  border: 2px solid #3AC376;
+  background:rgba(69, 159, 233, 0.5);
+  border: 2px solid rgba(20, 86, 139, 0.5);
 
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
-}
-
-.popup {
-  margin: 20% auto;
-  padding: 40px;
-  color: black;
-  background-color: rgb(144, 179, 159);
-  border-radius: 5px;
-  max-width: 300px;
-  position: relative;
-  /* transition: all 5s ease-in-out; */
-  font-family: 'Roboto Mono', monospace;
+form{
   text-align: right;
+  margin-right: 45%;
 }
 
-.popup h2 {
-  margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
-}
-
-.popup .close {
-  position: absolute;
-  top: 10px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #2A797D;
-}
-
-.popup .close:hover {
-  color: black;
-}
-
-.popup .content {
-  max-height: 30%;
-  overflow: auto;
+.input {
+  background: rgba(0, 0, 0, 0);
+  border: none;
 }
