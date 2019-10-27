@@ -2,15 +2,13 @@
   {
     "id": 1,
     "destination": "hello",
-    "activity": "here",
+    "activity": "climbing",
     "partySize": "2",
     "date": "12/8/20"
   },
   {
     "id": 2,
     "destination": "nyc",
-    "activity": "tourist",
+    "activity": "camping",
     "partySize": "4",
-    "date": "12/9/20"
-  }
-]
+    "date": "12/9/20"}]

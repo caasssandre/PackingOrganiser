@@ -1,10 +1,6 @@
-[{
-  "title" : "climbing",
-  "sharedGear" : ["rope", "quickdraws"],
-  "personalGear" : ["harness", "helmet", "climbing shoes"]
-},
-{
-  "title" : "camping",
-  "sharedGear" : ["tent", "campstove"],
-  "personalGear" : ["sleeping bag", "head torch"]
-}]
+[{"activity" : "climbing",
+  "sharedGear" : ["rope", "quickdraws", "belay glasses"],
+  "personalGear" : ["harness", "helmet", "climbing shoes"]},{
+  "activity" : "camping",
+  "sharedGear" : ["tent", "campstove", "jhgkj", "ljhgkhj", "oiluglkgb", "hgljgh;"],
+  "personalGear" : ["sleeping bag", "head torch"]}]

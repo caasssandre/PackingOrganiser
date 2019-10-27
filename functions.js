@@ -9,11 +9,11 @@ function addTrip(id, request, data){
   })
 }
 
-function findTrip(data, id){
-  return data.find(trip => trip.id == id)
+function findObject(data, key, value){
+  return data.find(object => object[key] == value)
 }
 
 module.exports = {
   addTrip :addTrip,
-  findTrip : findTrip
+  findObject : findObject
 }
