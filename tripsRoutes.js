@@ -15,16 +15,17 @@ router.get('/past/:id', (req, res)=>{
 })
 
 router.get('/future', (req, res)=>{
-  const viewData = data
+  const viewData = {items : data}
   res.render('./trips/trips', viewData)
 })
 
 router.get('/future/:id', (req, res)=>{
   const trip = functions.findObject(data, 'id', req.params.id)
-  //console.log(trip.activity)
-  const viewData = functions.findObject(activitiesData, 'activity', trip.activity)
-  //viewData[destination] = trip.destination
-  //viewData[date] = trip.date
+  const viewData = {
+    items : functions.findObject(activitiesData, 'activity', trip.activity),
+    date : trip.date,
+    destination : trip.destination
+  }
   res.render('./trips/future_trip', viewData)
 })
 

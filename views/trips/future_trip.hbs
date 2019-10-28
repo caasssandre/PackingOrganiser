@@ -1,10 +1,22 @@
 <h1>Trip to {{destination}}, {{date}}</h1>
 
 <div>
+  <h3>For {{items.activity}} you will need</h3>
+  {{#if items.sharedGear}}
+  <h5>Shared gear</h5>
   <ul>
-    <h3>For {{activity}} you will need</h3>
-    {{#each this.sharedGear}}
-      <li>{{this}}</li>
+    {{#each items.sharedGear}}
+    <li>{{this}}</li>
     {{/each}}
   </ul>
+  {{/if}}
+  {{#if items.personalGear}}
+  <h5>Personal gear</h5>
+  <ul>
+    {{#each items.personalGear}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  {{/if}}
+
 </div>

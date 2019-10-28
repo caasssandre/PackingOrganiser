@@ -7,7 +7,6 @@ const functions = require('./functions')
 
 router.get('/', (req, res)=>{
   const viewData = activitiesData
-  // console.log('views '+ viewData[0].title)
   res.render('./trips/planner', viewData)
 })
 

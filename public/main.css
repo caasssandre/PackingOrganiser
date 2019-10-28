@@ -4,7 +4,7 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
-ul {
+.nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -17,11 +17,11 @@ ul {
   width: 100%;
 }
 
-li {
+.navitem {
   float: left;
 }
 
-li a {
+.navitem a {
   display: block;
   color: white;
   text-align: center;
@@ -29,7 +29,7 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
+.navitem a:hover {
   background-color: rgb(40, 58, 6);
 }
 
