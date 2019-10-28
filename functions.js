@@ -1,3 +1,4 @@
+
 const fs = require('fs')
 
 function addTrip(id, request, data){
@@ -13,7 +14,22 @@ function findObject(data, key, value){
   return data.find(object => object[key] == value)
 }
 
+function gearCounter(partySize, gearObject){
+  gearObject.quantity = Math.ceil(partySize/gearObject.capacity)
+  //console.log(gearObject)
+  return gearObject
+}
+
+function createPersonalisedList(activity, activitiesData, partySize){
+  let updatedGearList = []
+  let activitiesArray = findObject(activitiesData, "activity", activity).sharedGear
+  activitiesArray.forEach(gearObject => updatedGearList.push(gearCounter(partySize, gearObject))) 
+  console.log(activitiesArray)
+  return activitiesArray
+}
+
 module.exports = {
   addTrip :addTrip,
-  findObject : findObject
+  findObject : findObject,
+  createPersonalisedList: createPersonalisedList
 }

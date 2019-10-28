@@ -5,8 +5,8 @@
   {{#if items.sharedGear}}
   <h5>Shared gear</h5>
   <ul>
-    {{#each items.sharedGear}}
-    <li>{{this}}</li>
+    {{#each gearQtyList}}
+    <li class='pack'>{{name}}, x{{quantity}}</li>
     {{/each}}
   </ul>
   {{/if}}
@@ -14,7 +14,7 @@
   <h5>Personal gear</h5>
   <ul>
     {{#each items.personalGear}}
-    <li>{{this}}</li>
+    <li class='pack'>{{this}}</li>
     {{/each}}
   </ul>
   {{/if}}

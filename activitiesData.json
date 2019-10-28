@@ -2,9 +2,18 @@
   {
     "activity": "climbing",
     "sharedGear": [
-      "rope",
-      "quickdraws",
-      "belay glasses"
+      {
+        "name": "rope",
+        "capacity": 3
+      },
+      {
+        "name": "15 quickdraws",
+        "capacity": 2
+      },
+      {
+        "name": "belay glasses",
+        "capacity": 2
+      }
     ],
     "personalGear": [
       "harness",
@@ -15,12 +24,14 @@
   {
     "activity": "camping",
     "sharedGear": [
-      "tent",
-      "campstove",
-      "jhgkj",
-      "ljhgkhj",
-      "oiluglkgb",
-      "hgljgh;"
+      {
+        "name": "tent",
+        "capacity": 4
+      },
+      {
+        "name": "campstove",
+        "capacity": 3
+      }
     ],
     "personalGear": [
       "sleeping bag",

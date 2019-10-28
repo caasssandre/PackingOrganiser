@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
-const data = require('./data.json')
 const functions = require('./functions')
+const data = require('./data.json')
 const activitiesData = require('./activitiesData.json')
 
 router.get('/past', (req, res)=>{
@@ -24,7 +24,8 @@ router.get('/future/:id', (req, res)=>{
   const viewData = {
     items : functions.findObject(activitiesData, 'activity', trip.activity),
     date : trip.date,
-    destination : trip.destination
+    destination : trip.destination,
+    gearQtyList : functions.createPersonalisedList(trip.activity, activitiesData, trip.partySize)
   }
   res.render('./trips/future_trip', viewData)
 })
