@@ -6,7 +6,7 @@ const functions = require('./functions')
 
 
 router.get('/', (req, res)=>{
-  const viewData = activitiesData
+  const viewData = {items : activitiesData}
   res.render('./trips/planner', viewData)
 })
 
