@@ -1,7 +1,11 @@
 <div>
+  {{#if future_trips}}
   <h2>Your upcoming trips</h2>
+  {{else}}
+  <h2>Your past trips</h2>
+  {{/if}}
   <ul id = "tripsList">
-    {{#each items}}
+    {{#each future_trips}}
       <li><a href ='/trips/future/{{id}}'>{{destination}}</a></li>
     {{/each}}
   </ul>
