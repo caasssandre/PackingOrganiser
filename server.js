@@ -2,6 +2,7 @@ const express = require('express')
 const hbs = require('express-handlebars')
 const tripsRouter = require("./tripsRoutes")
 const plannerRouter = require('./plannerRoutes')
+const dbMethods = require('./dbMethods')
 
 const server = express()
 
@@ -16,7 +17,9 @@ server.use(express.urlencoded({extended: false}))
 
 server.get('/', (req, res)=>{
   const template = './trips/home.hbs'
-  res.render(template, {})
+  dbMethods.getAll('users').then(()=>
+    res.render(template, {})
+    )
 })
 
 server.use('/trips', tripsRouter)
