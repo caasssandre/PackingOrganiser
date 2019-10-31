@@ -23,7 +23,7 @@ router.get('/future', (req, res)=>{
 router.get('/future/:id', (req, res)=>{
   dbMethods.getTripAndActivities(req.params.id).then(activities => {
     console.log(activities)
-    res.render('./trips/future_trip', viewData)
+    res.render('./trips/future_trip', {})
     //const activitiesList = []
     // for(let activity of activities){
     //   activitiesList.push(activity.activity_id)
