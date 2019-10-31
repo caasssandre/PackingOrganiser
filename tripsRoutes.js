@@ -1,6 +1,5 @@
 const express = require("express")
 const router = express.Router()
-const data = require('./data.json')
 const dbMethods = require('./dbMethods')
 
 router.get('/past', (req, res)=>{
@@ -14,8 +13,9 @@ router.get('/past/:id', (req, res)=>{
 })
 
 router.get('/future', (req, res)=>{
-  const viewData = {future_trips : data}
-  res.render('./trips/trips', viewData)
+  dbMethods.getAll('trips').then(trips=>{
+    res.render('./trips/trips', {trips:trips})
+  })
 })
 
 
