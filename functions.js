@@ -1,5 +1,6 @@
-
 const fs = require('fs')
+const dbMethods = require('./dbMethods')
+
 
 function addTrip(id, request, data){
    const newTrip = request.body
@@ -10,9 +11,7 @@ function addTrip(id, request, data){
   })
 }
 
-function findObject(data, key, value){
-  return data.find(object => object[key] == value)
-}
+
 
 function gearCounter(partySize, gearObject){
   gearObject.quantity = Math.ceil(partySize/gearObject.capacity)
@@ -20,16 +19,16 @@ function gearCounter(partySize, gearObject){
   return gearObject
 }
 
-function createPersonalisedList(activity, activitiesData, partySize){
-  let updatedGearList = []
-  let activitiesArray = findObject(activitiesData, "activity", activity).sharedGear
-  activitiesArray.forEach(gearObject => updatedGearList.push(gearCounter(partySize, gearObject))) 
-  console.log(activitiesArray)
-  return activitiesArray
-}
+// function createPersonalisedList(activity, activitiesData, partySize){
+//   let updatedGearList = []
+//   let activitiesArray = findObject(activitiesData, "activity", activity).sharedGear
+//   activitiesArray.forEach(gearObject => updatedGearList.push(gearCounter(partySize, gearObject))) 
+//   console.log(activitiesArray)
+//   return activitiesArray
+// }
 
 module.exports = {
   addTrip :addTrip,
-  findObject : findObject,
-  createPersonalisedList: createPersonalisedList
+  //findObject : findObject,
+  //createPersonalisedList: createPersonalisedList
 }

@@ -8,7 +8,7 @@ const createFakeUser = () => ({
 
 exports.seed = async function (knex, Promise) {
   const fakeUsers = []
-  for(let i =0; i<100; i++){
+  for(let i =0; i<10; i++){
     fakeUsers.push(createFakeUser())
   }
   await knex('users')
