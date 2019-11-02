@@ -24,6 +24,7 @@ function getGear(tripId, db = database){
   return db('trips_activities')
     .where('trips_activities.trip_id', tripId)
     .join('gears', 'trips_activities.activity_id', 'gears.activity_id')
+    .select('gear_name', 'capacity')
 }
 
 
