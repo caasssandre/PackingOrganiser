@@ -4,7 +4,7 @@ exports.up = function(knex) {
     table.increments('trip_id').primary()
     table.string('destination')
     table.date('trip_date')
-    table.integer('duration')
+    table.integer('party_size')
   })
   
 };

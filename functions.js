@@ -14,10 +14,12 @@ function extractDataForDisplay(tripAndActivitiesList){
 
 
 
-function gearCounter(partySize, gearObject){
-  gearObject.quantity = Math.ceil(partySize/gearObject.capacity)
-  //console.log(gearObject)
-  return gearObject
+function gearCounter(partySize, gearList){
+  for(gear of gearList){
+    gear.quantity = Math.ceil(partySize/gear.capacity)
+    delete gear.capacity
+  }
+  return gearList
 }
 
 // function createPersonalisedList(activity, activitiesData, partySize){

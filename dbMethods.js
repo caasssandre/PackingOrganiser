@@ -17,7 +17,7 @@ function getTripAndActivities(tripId, db = database){
     .join('activities', 'activities.activity_id', 'trips_activities.activity_id')
     .select('activity_name')
     .join('trips', 'trips.trip_id', 'trips_activities.trip_id')
-    .select('destination', 'trip_date')
+    .select('destination', 'trip_date', 'party_size')
 }
 
 function getGear(tripId, db = database){
