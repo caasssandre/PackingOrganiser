@@ -1,14 +1,15 @@
 const fs = require('fs')
 const dbMethods = require('./dbMethods')
 
-
-function addTrip(id, request, data){
-   const newTrip = request.body
-   newTrip.id = id
-   data.push(newTrip)
-   fs.writeFile('./data.json', JSON.stringify(data), (err) => {
-    if (err) throw err;
-  })
+function extractDataForDisplay(tripAndActivitiesList){
+  tripAndActivitiesList[0]['activity_list'] = [tripAndActivitiesList[0]['activity_name']]
+  for(let i = 1; i<tripAndActivitiesList.length; i++){
+    if(!tripAndActivitiesList[0]['activity_list'].includes(tripAndActivitiesList[i]['activity_name'])){
+      tripAndActivitiesList[0]['activity_list'].push(tripAndActivitiesList[i]['activity_name'])
+    }
+  }
+  delete tripAndActivitiesList[0]['activity_name']
+  return tripAndActivitiesList[0]
 }
 
 
@@ -28,7 +29,6 @@ function gearCounter(partySize, gearObject){
 // }
 
 module.exports = {
-  addTrip :addTrip,
-  //findObject : findObject,
-  //createPersonalisedList: createPersonalisedList
+  gearCounter,
+  extractDataForDisplay
 }

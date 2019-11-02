@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
-const data = require('./data.json')
 const activitiesData = require('./activitiesData.json')
 const functions = require('./functions')
+const dbMethods = require('./dbMethods')
 
 
 router.get('/', (req, res)=>{

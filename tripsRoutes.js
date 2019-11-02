@@ -1,10 +1,10 @@
 const express = require("express")
 const router = express.Router()
 const dbMethods = require('./dbMethods')
+const functions = require('./functions')
 
 router.get('/past', (req, res)=>{
-  const viewData = {}
-  res.render('./trips/trips', viewData)
+  res.render('./trips/trips', {})
 })
 
 router.get('/past/:id', (req, res)=>{
@@ -21,24 +21,13 @@ router.get('/future', (req, res)=>{
 
 
 router.get('/future/:id', (req, res)=>{
-  dbMethods.getTripAndActivities(req.params.id).then(activities => {
-    console.log(activities)
-    res.render('./trips/future_trip', {})
-    //const activitiesList = []
-    // for(let activity of activities){
-    //   activitiesList.push(activity.activity_id)
-    // }
-    //return activitiesList
+  dbMethods.getTripAndActivities(req.params.id)
+  .then(tripAndActivities => functions.extractDataForDisplay(tripAndActivities))
+  .then(tripData=>{
+    dbMethods.getGear(req.params.id)
+    .then(thing=>console.log(thing))
   })
 })
-  // const viewData = {
-  //   items : functions.findObject(activitiesData, 'activity', trip.activity),
-  //   date : trip.date,
-  //   destination : trip.destination,
-  //   gearQtyList : functions.createPersonalisedList(trip.activity, activitiesData, trip.partySize)
-  // }
-  // })
-
 
 
 module.exports = router
