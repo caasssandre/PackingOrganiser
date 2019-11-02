@@ -21,12 +21,12 @@
         </label>
       </div>
       <div>
-          <label for="activity">
+          <label for="activity_id">
             Activity :
-            <select name="activity">
+            <select name="activity_id">
               <option value=0>Select activity</option>
-              {{#each items}}
-              <option value="{{activity}}">{{activity}}</option>
+              {{#each activities}}
+              <option value="{{activity_id}}">{{activity_name}}</option>
               {{/each}}
             </select>
           </label>

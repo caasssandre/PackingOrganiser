@@ -28,15 +28,15 @@ function getGear(tripId, db = database){
 }
 
 
-function addTrip(tripObject, db = database){
-  return db('trips')
-    .insert(tripObject)
+function add(tableName, newData, db = database){
+  return db(tableName)
+    .insert(newData)
 }
 
 module.exports = {
   getAll,
   getOne,
   getTripAndActivities,
-  addTrip,
+  add,
   getGear
 }
