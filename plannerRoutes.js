@@ -14,13 +14,12 @@ router.post('/', (request, response) => {
   let newTrip = {
     destination : request.body.destination,
     trip_date : request.body.trip_date,
-    party_size : request.body.trip_date
+    party_size : request.body.party_size
   }
-  
   dbMethods.add('trips', newTrip).then(thisTripId=>{
     let newTripActivity = {
       trip_id : thisTripId[0],
-      activity_id : request.body.activity_id
+      activity_id : request.body.activity_id,
     }
     dbMethods.add('trips_activities', newTripActivity)
     .then(()=>{
