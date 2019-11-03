@@ -26,9 +26,13 @@ router.get('/future/:id', (req, res)=>{
     dbMethods.getGearAndActivities(req.params.id)
     .then(gearData=>{
       gearData = functions.gearCounter(tripData.party_size, gearData)
-      functions.extractDataForDisplay(gearData)
-      res.render('./trips/future_trip', {tripData, gearData})      
-  })
+      gearData = functions.extractDataForDisplay(gearData)
+      const viewData = {
+        activitiesAndGear : gearData,
+        tripData
+      }
+      res.render('./trips/future_trip', viewData)      
+    })
   })
 })
 

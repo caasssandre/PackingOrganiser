@@ -1,13 +1,13 @@
 <h1>Trip to {{tripData.destination}}, {{tripData.trip_date}}</h1>
 <div class="packing_list row">
-  {{#each tripData.activity_list}}
+  {{#each activitiesAndGear}}
   <div class="col-md-3">
-    <h3>{{this}}</h3>
-  </div>
-    {{/each}}
-    {{#each gearData}}
+    <h3>{{activity_name}}</h3>
+    {{#each gear_data}}
     <ul>
       <li class='pack'>{{gear_name}} x {{quantity}}</li>
     </ul>
     {{/each}}
+  </div>
+    {{/each}}   
 </div>
