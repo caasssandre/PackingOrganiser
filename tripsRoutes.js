@@ -21,15 +21,14 @@ router.get('/future', (req, res)=>{
 
 
 router.get('/future/:id', (req, res)=>{
-  dbMethods.getTripAndActivities(req.params.id)
-  .then(tripAndActivities => functions.extractDataForDisplay(tripAndActivities))
+  dbMethods.getOne('trips', 'trip_id', req.params.id)
   .then(tripData=>{
-    dbMethods.getGear(req.params.id)
+    dbMethods.getGearAndActivities(req.params.id)
     .then(gearData=>{
-      gearData = functions.gearCounter(tripData.party_size, gearData)         
-      console.log({tripData, gearData})
+      gearData = functions.gearCounter(tripData.party_size, gearData)
+      functions.extractDataForDisplay(gearData)
       res.render('./trips/future_trip', {tripData, gearData})      
-    })
+  })
   })
 })
 

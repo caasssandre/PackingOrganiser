@@ -1,6 +1,7 @@
-body {
+.jumbotron {
   background-image: url('images/background.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Roboto Mono', monospace;
 }
 
@@ -79,4 +80,11 @@ select {
   color: grey;
   margin: 10px auto 10px auto;
   font-family: 'Roboto Mono', monospace;
+}
+
+.packing_list {
+  color: rgba(255, 255, 255, 0.712);
+  padding: 6px;
+  background-color: rgba(31, 29, 29, 0.5);
+  box-shadow: 0 0 5px 5px rgba(31, 29, 29, 0.5);
 }
