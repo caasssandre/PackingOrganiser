@@ -14,6 +14,12 @@ router.get('/trips', (req, res)=>{
   })
 })
 
+router.get('/users', (req, res)=>{
+  dbMethods.getAll('users').then(thing=>{
+    res.send(thing)
+  })
+})
+
 router.get('/gears', (req, res)=>{
   dbMethods.getAll('gears').then(thing=>{
     res.send(thing)
