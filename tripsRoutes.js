@@ -12,8 +12,8 @@ router.get('/past/:id', (req, res)=>{
   res.render('./trips/past_trip', viewData)
 })
 
-router.get('/future', (req, res)=>{
-  dbMethods.getAll('trips').then(trips=>{
+router.get('/:id/future', (req, res)=>{
+  dbMethods.getUserTrips(req.params.id).then(trips=>{
     res.render('./trips/trips', {trips:trips})
   })
 })

@@ -12,6 +12,11 @@ function getOne(databaseName, columnName, value, db = database){
     .first()
 }
 
+function add(tableName, newData, db = database){
+  return db(tableName)
+    .insert(newData)
+}
+
 
 function getGearAndActivities(tripId, db = database){
   return db('trips_activities')
@@ -22,15 +27,16 @@ function getGearAndActivities(tripId, db = database){
     .select('gear_name', 'capacity')
 }
 
-
-function add(tableName, newData, db = database){
-  return db(tableName)
-    .insert(newData)
+function getUserTrips(userId, db = database){
+  return db('users_trips')
+    .where('users_trips.user_id', userId)
+    .join('trips', 'trips.trip_id', 'users_trips.trip_id')
 }
 
 module.exports = {
   getAll,
   getOne,
   add,
-  getGearAndActivities
+  getGearAndActivities,
+  getUserTrips
 }
