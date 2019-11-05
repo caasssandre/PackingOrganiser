@@ -3,10 +3,10 @@ const router = express.Router()
 const dbMethods = require('./dbMethods')
 
 
-router.get('/', (req, res)=>{
+router.get('/:id', (req, res)=>{
   dbMethods.getAll('activities')
   .then(activity_data=>{
-    res.render('./trips/planner', { activities : activity_data})
+    res.render('./trips/planner', { activities : activity_data, id:req.params.id})
   })  
 })
 

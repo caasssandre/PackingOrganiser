@@ -3,8 +3,8 @@ const router = express.Router()
 const dbMethods = require('./dbMethods')
 const functions = require('./functions')
 
-router.get('/past', (req, res)=>{
-  res.render('./trips/trips', {})
+router.get('/:id/past', (req, res)=>{
+  res.render('./trips/trips', {id:req.params.id})
 })
 
 router.get('/past/:id', (req, res)=>{
@@ -14,16 +14,16 @@ router.get('/past/:id', (req, res)=>{
 
 router.get('/:id/future', (req, res)=>{
   dbMethods.getUserTrips(req.params.id).then(trips=>{
-    res.render('./trips/trips', {trips:trips})
+    res.render('./trips/trips', {trips:trips, id:req.params.id})
   })
 })
 
 
 
-router.get('/future/:id', (req, res)=>{
-  dbMethods.getOne('trips', 'trip_id', req.params.id)
+router.get('/future/:trip', (req, res)=>{
+  dbMethods.getOne('trips', 'trip_id', req.params.trip)
   .then(tripData=>{
-    dbMethods.getGearAndActivities(req.params.id)
+    dbMethods.getGearAndActivities(req.params.trip)
     .then(gearData=>{
       gearData = functions.gearCounter(tripData.party_size, gearData)
       gearData = functions.extractDataForDisplay(gearData)
