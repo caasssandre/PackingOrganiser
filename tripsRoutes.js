@@ -14,13 +14,14 @@ router.get('/past/:id', (req, res)=>{
 
 router.get('/:id/future', (req, res)=>{
   dbMethods.getUserTrips(req.params.id).then(trips=>{
+    // console.log(trips)
     res.render('./trips/trips', {trips:trips, id:req.params.id})
   })
 })
 
 
 
-router.get('/future/:trip', (req, res)=>{
+router.get('/:id/future/:trip', (req, res)=>{
   dbMethods.getOne('trips', 'trip_id', req.params.trip)
   .then(tripData=>{
     dbMethods.getGearAndActivities(req.params.trip)
@@ -29,7 +30,8 @@ router.get('/future/:trip', (req, res)=>{
       gearData = functions.extractDataForDisplay(gearData)
       const viewData = {
         activitiesAndGear : gearData,
-        tripData
+        tripData,
+        id: req.params.id
       }
       res.render('./trips/future_trip', viewData)      
     })

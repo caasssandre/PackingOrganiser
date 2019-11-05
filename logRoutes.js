@@ -32,4 +32,10 @@ router.get('/tripsActivity', (req, res)=>{
   })
 })
 
+router.get('/usersTrips', (req, res)=>{
+  dbMethods.getAll('users_trips').then(thing=>{
+    res.send(thing)
+  })
+})
+
 module.exports = router
