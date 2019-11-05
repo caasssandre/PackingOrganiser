@@ -7,7 +7,7 @@ router.get('/:id/past', (req, res)=>{
   res.render('./trips/trips', {id:req.params.id})
 })
 
-router.get('/past/:id', (req, res)=>{
+router.get('/:id/past/:trip', (req, res)=>{
   const viewData = {}
   res.render('./trips/past_trip', viewData)
 })

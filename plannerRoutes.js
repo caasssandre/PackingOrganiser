@@ -25,7 +25,7 @@ router.post('/:id', (request, response) => {
     dbMethods.add('users_trips', {user_id: request.params.id, trip_id: thisTripId[0]}).then(()=>{
       dbMethods.add('trips_activities', newTripActivity)
       .then(()=>{
-        response.redirect('/trips/future/'+thisTripId[0])
+        response.redirect('/trips/'+request.params.id+'/future/'+thisTripId[0])
       })
     })   
   })
