@@ -2,12 +2,13 @@
 <div>
   {{#if trips}}
   <h2>Your upcoming trips</h2>
-  {{else}}
-  <h2>Your past trips</h2>
-  {{/if}}
-  <ul class = "packing_list">
+    <ul class = "packing_list">
     {{#each trips}}
       <li><a href ='/trips/{{user_id}}/future/{{trip_id}}'>{{destination}}</a></li>
     {{/each}}
   </ul>
+  {{else}}
+  <h2>Your past trips</h2>
+  {{/if}}
+
 </div>

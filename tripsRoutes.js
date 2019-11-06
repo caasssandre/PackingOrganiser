@@ -38,5 +38,9 @@ router.get('/:id/future/:trip', (req, res)=>{
   })
 })
 
+router.post('/archive/:id/:trip', (req, res)=>{
+  
+})
+
 
 module.exports = router
