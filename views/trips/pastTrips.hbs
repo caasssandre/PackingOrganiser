@@ -1,14 +1,14 @@
 {{>nav}}
 <div>
-  {{#if trips}}
-  <h2>Your upcoming trips</h2>
+  {{#if pastTrips}}
+  <h2>Your past trips</h2>
     <ul class = "packing_list">
-    {{#each trips}}
+    {{#each pastTrips}}
       <li><a href ='/trips/{{user_id}}/future/{{trip_id}}'>{{destination}}</a></li>
     {{/each}}
   </ul>
   {{else}}
-    <h2>You have no upcoming trip</h2>
+    <h2>You have no past trips</h2>
     <a href="/planner/{{id}}">Create a trip</a>
   {{/if}}
 </div>

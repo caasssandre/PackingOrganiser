@@ -27,10 +27,18 @@ function getGearAndActivities(tripId, db = database){
     .select('gear_name', 'capacity')
 }
 
-function getUserTrips(userId, db = database){
+function getUserTrips(userId, tripSatus, db = database){
   return db('users_trips')
     .where('users_trips.user_id', userId)
+    .where('users_trips.trip_status', tripSatus)
     .join('trips', 'trips.trip_id', 'users_trips.trip_id')
+}
+
+function archiveTrip(tripId, userId, db = database){
+  return db('users_trips')
+    .where('users_trips.user_id', userId)
+    .where('users_trips.trip_id', tripId)
+    .update({'trip_status': 'past'})
 }
 
 module.exports = {
@@ -38,5 +46,6 @@ module.exports = {
   getOne,
   add,
   getGearAndActivities,
-  getUserTrips
+  getUserTrips,
+  archiveTrip
 }
