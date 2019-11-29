@@ -2,6 +2,7 @@ const express = require('express')
 const hbs = require('express-handlebars')
 const tripsRouter = require("./tripsRoutes")
 const plannerRouter = require('./plannerRoutes')
+const listRouter = require('./listCreatorRoutes')
 const logsRouter = require('./logRoutes')
 const dbMethods = require('./dbMethods')
 
@@ -26,6 +27,7 @@ server.get('/', (req, res)=>{
 
 server.use('/trips', tripsRouter)
 server.use('/planner', plannerRouter)
+server.use('/newPackingList', listRouter)
 server.use('/consoleLogs', logsRouter)
 
 module.exports = server

@@ -1,0 +1,33 @@
+{{>nav}}
+<div>
+  <h2>Create your list here</h2>
+  <div class='row'>
+    <div class='col-md-8'>
+      <form action='/listActivity' method='post' autocomplete="off">
+        <label>
+          What activity is this list for?
+          <input class='input' type="text" name='activity' placeholder="activty">
+        </label>
+      </form>
+      <form action='/createList/:id' method='post' autocomplete="off">
+        <label>
+          Gear
+          <input class='input' type="text" placeholder="What do you need?">
+        </label>
+        <label>
+          Capacity
+          <input class='input' type="number" placeholder="How many people can use it?">
+        </label>
+      </form>
+    </div>
+    <div class='packing_list col-sm-3'>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+    </div>
+
+  </div>
+</div>

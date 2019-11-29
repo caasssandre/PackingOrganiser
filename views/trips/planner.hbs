@@ -1,28 +1,28 @@
 {{>nav}}
-<div id="newTrip">
+<div>
   <h2>My pack</h2>
-  <div>
+
     <form action='/planner/{{id}}' method='post'autocomplete="off">
       <div>
-        <label for="destination">
+        <label>
           Destination :
           <input class="input" type="text" name="destination" placeholder="Where are you going?">
         </label>
       </div>
       <div>
-        <label for="partySize">
+        <label>
           Party size :
           <input class="input" type="number" name="party_size" placeholder="How many people are coming?">
         </label>
       </div>
       <div>
-        <label for="date">
+        <label>
           Date :
           <input class="input" type="date" name="trip_date" placeholder="When will you go?">
         </label>
       </div>
       <div>
-          <label for="activity_id">
+          <label>
             Activity :
             <select name="activity_id">
               <option value=0>Select activity</option>
@@ -36,5 +36,5 @@
         <button class="button">Create</button>
       </div>
     </form>
-  </div>
+
 </div>
